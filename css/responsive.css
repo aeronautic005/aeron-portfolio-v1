@@ -1,0 +1,118 @@
+/* ==========================================================================
+   BRYL-MINIMAL DESIGN LANGUAGE — Responsive & Viewport Breakpoints
+   Fixed left sidebar (≥1024px) / Sticky top header & full-screen overlay (<1024px)
+   ========================================================================== */
+
+/* ── Tablet & Mobile (< 1024px) ── */
+@media (max-width: 1023px) {
+  /* Hide fixed desktop sidebar */
+  .sidebar {
+    display: none;
+  }
+
+  /* Show sticky mobile top header */
+  .mobile-header {
+    display: flex;
+  }
+
+  /* Reset content area margin and adjust padding for top bar */
+  .content-area {
+    margin-left: 0;
+    padding: 5.5rem 1.5rem 5rem;
+  }
+
+  /* Scale display title */
+  .display-title {
+    font-size: 2.35rem;
+  }
+
+  /* Profile showcase adjustments */
+  .profile-showcase {
+    min-height: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .profile-showcase-grid {
+    grid-template-columns: 220px 1fr;
+    gap: 1.75rem;
+  }
+
+  .profile-name {
+    font-size: 2.25rem;
+  }
+
+  /* Stat matrix adjustments */
+  .stat-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-cell {
+    border-right: none;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .stat-cell:last-child {
+    border-bottom: none;
+  }
+
+  /* Halftone overlay adjustment */
+  .halftone-overlay {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+/* ── Mobile Phone (< 640px) ── */
+@media (max-width: 639px) {
+  .content-area {
+    padding: 5rem 1rem 4rem;
+  }
+
+  /* Profile showcase collapse */
+  .profile-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  .profile-frame-container {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .profile-facts {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Collapse project cards to single column */
+  .grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Timeline collapse */
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  /* Skills collapse */
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .display-title {
+    font-size: 2rem;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aeron Irasusta — Software Engineer. Focused on AI automation, full-stack web development, UI/UX, and cybersecurity.">
+  <meta name="author" content="Aeron Irasusta">
+  <meta name="color-scheme" content="light dark">
+
+  <title>aeron irasusta</title>
+
+  <!-- Google Fonts: Geist, Geist Mono, Source Serif 4 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Geist:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       TEXTURE: Monochrome Halftone Accent (Seasoning with soft radial mask)
+       ====================================================================== -->
+  <div class="halftone-overlay" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       MOBILE TOP HEADER (< 1024px)
+       Sticky top bar, hairline bottom border, backdrop blur
+       ====================================================================== -->
+  <header class="mobile-header">
+    <a href="#" class="mobile-brand">aeron irasusta</a>
+    <button class="mobile-menu-btn" id="mobileMenuOpen" aria-label="Open Navigation">menu</button>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span class="micro-label">navigation</span>
+      <button class="mobile-menu-btn" id="mobileMenuClose" aria-label="Close Navigation">close ✕</button>
+    </div>
+
+    <nav style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem;">
+      <a href="#profile" class="plain-link" style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ink);">00 — profile</a>
+      <a href="#about" class="plain-link" style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ink);">01 — about</a>
+      <a href="#projects" class="plain-link" style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ink);">02 — projects</a>
+      <a href="#skills" class="plain-link" style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ink);">03 — skills</a>
+      <a href="#experience" class="plain-link" style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ink);">04 — experience</a>
+      <a href="#contact" class="plain-link" style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ink);">05 — contact</a>
+    </nav>
+
+    <div style="display: flex; flex-direction: column; gap: 1rem; border-top: 1px solid var(--border-hairline); padding-top: 1.5rem;">
+      <span class="micro-label">theme</span>
+      <div class="theme-switch-group">
+        <button class="theme-btn" data-theme-choice="light">light</button>
+        <button class="theme-btn" data-theme-choice="dark">dark</button>
+        <button class="theme-btn" data-theme-choice="system">system</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       APPLICATION LAYOUT: Fixed Sidebar (Left) + Content Measure (Right)
+       ====================================================================== -->
+  <div class="app-layout">
+
+    <!-- Fixed Left Sidebar (≥1024px) -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a href="#" class="sidebar-brand">
+          <span class="sidebar-name">aeron irasusta</span>
+          <span class="sidebar-role">software engineer</span>
+        </a>
+
+        <!-- Status Indicator: Slow pulse loop -->
+        <div class="status-indicator">
+          <span class="status-dot status-pulse"></span>
+          <span class="status-text">open to work</span>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Section Navigation -->
+        <nav class="sidebar-nav">
+          <a href="#profile" class="nav-item">
+            <span class="nav-arrow">→</span>
+            <span>profile</span>
+          </a>
+          <a href="#about" class="nav-item">
+            <span class="nav-arrow">→</span>
+            <span>about</span>
+          </a>
+          <a href="#projects" class="nav-item">
+            <span class="nav-arrow">→</span>
+            <span>projects</span>
+          </a>
+          <a href="#skills" class="nav-item">
+            <span class="nav-arrow">→</span>
+            <span>skills</span>
+          </a>
+          <a href="#experience" class="nav-item">
+            <span class="nav-arrow">→</span>
+            <span>experience</span>
+          </a>
+          <a href="#contact" class="nav-item">
+            <span class="nav-arrow">→</span>
+            <span>contact</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer: Theme switcher & External Links -->
+      <div class="sidebar-footer">
+        <div class="theme-switch-group">
+          <button class="theme-btn" data-theme-choice="light">light</button>
+          <button class="theme-btn" data-theme-choice="dark">dark</button>
+          <button class="theme-btn" data-theme-choice="system">system</button>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://github.com/aeronautic005" target="_blank" rel="noopener" class="micro-label plain-link">
+            github <span class="arrow-nudge">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/irasustaaeron/" target="_blank" rel="noopener" class="micro-label plain-link">
+            linkedin <span class="arrow-nudge">↗</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Column -->
+    <main class="content-area">
+      <div class="content-measure">
+
+        <!-- ==================================================================
+             SOLO PROFILE HIGHLIGHT (Hero Showcase)
+             Prominent first-stage presentation with photo & personal narrative
+             ================================================================== -->
+        <section class="profile-showcase observe-entrance stagger-1" id="profile">
+          <div class="profile-showcase-grid">
+
+            <!-- Left: Profile Portrait & Halftone Backdrop -->
+            <div class="profile-frame-container">
+              <div class="profile-frame-backdrop" aria-hidden="true"></div>
+              <div class="profile-frame card-inset-border">
+                <img src="assets/images/profile.png" alt="Aeron Irasusta" class="profile-photo">
+              </div>
+              <div class="profile-meta-pill">
+                <span class="micro-label" style="color: var(--ink);">aeron irasusta</span>
+                <span class="status-indicator" style="padding: 0.2rem 0.5rem;">
+                  <span class="status-dot status-pulse"></span>
+                  <span class="status-text">available</span>
+                </span>
+              </div>
+            </div>
+
+            <!-- Right: Personal Overview & Narrative -->
+            <div class="profile-content">
+              <span class="micro-label">00 — profile overview</span>
+              
+              <div>
+                <h1 class="profile-name">aeron irasusta</h1>
+                <p class="profile-tagline">ai automation &middot; web dev &middot; ui/ux &middot; cybersecurity</p>
+              </div>
+
+              <p class="profile-bio">
+                Software engineer specializing in <strong>AI automation</strong>, full-stack web development, 
+                intuitive UI/UX design, and <strong>defensive cybersecurity</strong>. Dedicated to building reliable, 
+                resilient systems where purposeful engineering and clarity come first.
+              </p>
+
+              <!-- Fact Highlights -->
+              <div class="profile-facts">
+                <div class="profile-fact-chip">
+                  <span class="profile-fact-label">institution</span>
+                  <span>BatStateU - The NEU</span>
+                </div>
+                <div class="profile-fact-chip">
+                  <span class="profile-fact-label">focus</span>
+                  <span>AI Automation &amp; Web Dev</span>
+                </div>
+                <div class="profile-fact-chip">
+                  <span class="profile-fact-label">domains</span>
+                  <span>UI/UX &amp; Cybersecurity</span>
+                </div>
+                <div class="profile-fact-chip">
+                  <span class="profile-fact-label">base</span>
+                  <span>Philippines</span>
+                </div>
+              </div>
+
+              <!-- Action CTAs -->
+              <div class="intro-actions" style="margin-top: 0.75rem;">
+                <a href="#contact" class="btn-ink">
+                  get in touch <span class="arrow-right-nudge">→</span>
+                </a>
+                <a href="#projects" class="btn-mono-link">
+                  view selected work <span class="arrow-nudge">↗</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Subtle Scroll Cue -->
+          <a href="#about" class="profile-scroll-cue">
+            scroll to explore <span class="profile-scroll-arrow">↓</span>
+          </a>
+        </section>
+
+        <!-- Stat Row: Divided with hairline rules (both axes) -->
+        <div class="stat-matrix observe-entrance stagger-2" style="margin-bottom: 3.5rem;">
+          <div class="stat-cell">
+            <span class="micro-label">focus</span>
+            <span class="stat-value">ai &amp; web dev</span>
+          </div>
+          <div class="stat-cell">
+            <span class="micro-label">domains</span>
+            <span class="stat-value">ui/ux &amp; security</span>
+          </div>
+          <div class="stat-cell">
+            <span class="micro-label">institution</span>
+            <span class="stat-value">batstateu - neu</span>
+          </div>
+        </div>
+
+        <div class="hairline-rule"></div>
+
+        <!-- ==================================================================
+             SECTION 01: ABOUT
+             Numbered em-dashed header, editorial text
+             ================================================================== -->
+        <section class="content-section observe-entrance stagger-1" id="about">
+          <div class="section-marker">01 — about</div>
+          
+          <h2 style="font-size: 1.4rem; margin-bottom: 1.25rem;">engineering intelligent, secure systems.</h2>
+          
+          <p class="editorial-text" style="margin-bottom: 1.5rem;">
+            I engineer modern software centered around intelligent AI automation, resilient web architectures (frontend &amp; backend), and intuitive user experiences. With a rigorous eye on cybersecurity, my goal is to craft digital tools that are secure by design, straightforward to operate, and impactful.
+          </p>
+
+          <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+            Currently studying Computer Science at <strong>Batangas State University - The National Engineering University</strong>, deepening foundational systems engineering, data structures, and computational security while actively designing and shipping practical software.
+          </p>
+
+          <!-- Detail Card -->
+          <div class="card card-faint">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1.25rem;">
+              <div>
+                <span class="micro-label">studies</span>
+                <p style="font-size: 0.875rem; color: var(--ink); margin-top: 0.25rem; line-height: 1.45;">Batangas State University - The National Engineering University</p>
+              </div>
+              <div>
+                <span class="micro-label">interests</span>
+                <p style="font-size: 0.875rem; color: var(--ink); margin-top: 0.25rem; line-height: 1.45;">AI Tools, Music, Programming &amp; Developing</p>
+              </div>
+              <div>
+                <span class="micro-label">purpose</span>
+                <p style="font-size: 0.875rem; color: var(--ink); margin-top: 0.25rem; line-height: 1.45;">Explore relentlessly, innovate with purpose, and empower others</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="hairline-rule"></div>
+
+        <!-- ==================================================================
+             SECTION 02: PROJECTS
+             Cards with hairline borders, soft ground shadows, inverted chip
+             ================================================================== -->
+        <section class="content-section observe-entrance stagger-2" id="projects">
+          <div class="section-marker">02 — projects</div>
+
+          <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem;">selected work</h2>
+
+          <div class="grid-cards">
+
+            <!-- Project 1 (Champion/Featured with Inverted Chip) -->
+            <div class="card project-card card-inset-border">
+              <div>
+                <div class="project-thumbnail">
+                  <div class="project-thumbnail-halftone"></div>
+                  <span class="micro-label" style="position: relative; z-index: 1;">preview / 01</span>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <div class="project-title">
+                    <span>portfolio site</span>
+                    <!-- Inverted chip: highest emphasis allowed -->
+                    <span class="chip-inverted">featured</span>
+                  </div>
+                  <p class="project-desc">
+                    Minimal, typography-driven portfolio engineered with the bryl-minimal aesthetic, featuring full light/dark theming and dot texture accents.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div class="project-tags" style="margin-bottom: 0.75rem;">
+                  <span class="tag-pill">HTML</span>
+                  <span class="tag-pill">CSS</span>
+                  <span class="tag-pill">JS</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <a href="#" class="micro-label plain-link">live demo <span class="arrow-nudge">↗</span></a>
+                  <a href="#" class="micro-label plain-link">source <span class="arrow-nudge">↗</span></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 (Placeholder) -->
+            <div class="card project-card">
+              <div>
+                <div class="project-thumbnail">
+                  <div class="project-thumbnail-halftone"></div>
+                  <span class="micro-label" style="position: relative; z-index: 1;">preview / 02</span>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <div class="project-title">
+                    <span>system monitor</span>
+                  </div>
+                  <p class="project-desc">
+                    A lightweight command-line telemetry and process monitoring utility designed for clean developer terminal outputs.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div class="project-tags" style="margin-bottom: 0.75rem;">
+                  <span class="tag-pill">Python</span>
+                  <span class="tag-pill">CLI</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <a href="#" class="micro-label plain-link">repository <span class="arrow-nudge">↗</span></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 (Placeholder) -->
+            <div class="card project-card">
+              <div>
+                <div class="project-thumbnail">
+                  <div class="project-thumbnail-halftone"></div>
+                  <span class="micro-label" style="position: relative; z-index: 1;">preview / 03</span>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <div class="project-title">
+                    <span>web experiments</span>
+                  </div>
+                  <p class="project-desc">
+                    Interactive experiments exploring responsive typography scales, layout algorithms, and micro-interactions.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div class="project-tags" style="margin-bottom: 0.75rem;">
+                  <span class="tag-pill">Design</span>
+                  <span class="tag-pill">Vanilla JS</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <a href="#" class="micro-label plain-link">explore <span class="arrow-nudge">↗</span></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 (Placeholder) -->
+            <div class="card project-card">
+              <div>
+                <div class="project-thumbnail">
+                  <div class="project-thumbnail-halftone"></div>
+                  <span class="micro-label" style="position: relative; z-index: 1;">preview / 04</span>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                  <div class="project-title">
+                    <span>notes &amp; archive</span>
+                  </div>
+                  <p class="project-desc">
+                    Personal markdown documentation system for computer science coursework, algorithms, and practical notes.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <div class="project-tags" style="margin-bottom: 0.75rem;">
+                  <span class="tag-pill">Markdown</span>
+                  <span class="tag-pill">Documentation</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem;">
+                  <a href="#" class="micro-label plain-link">archive <span class="arrow-nudge">↗</span></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <div class="hairline-rule"></div>
+
+        <!-- ==================================================================
+             SECTION 03: SKILLS
+             Dividers are the design — hairline matrix
+             ================================================================== -->
+        <section class="content-section observe-entrance stagger-3" id="skills">
+          <div class="section-marker">03 — skills</div>
+
+          <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem;">technical index</h2>
+
+          <div class="skills-matrix">
+            <div class="skill-row">
+              <span class="skill-row-title">languages</span>
+              <div class="skill-row-pills">
+                <span class="tag-pill">HTML5</span>
+                <span class="tag-pill">CSS3</span>
+                <span class="tag-pill">JavaScript (ES6+)</span>
+                <span class="tag-pill">Python</span>
+                <span class="tag-pill">C++</span>
+                <span class="tag-pill">Java</span>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <span class="skill-row-title">tools &amp; workflow</span>
+              <div class="skill-row-pills">
+                <span class="tag-pill">Git</span>
+                <span class="tag-pill">GitHub</span>
+                <span class="tag-pill">VS Code</span>
+                <span class="tag-pill">n8n</span>
+                <span class="tag-pill">Zapier</span>
+                <span class="tag-pill">Claude Code</span>
+                <span class="tag-pill">Antigravity</span>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <span class="skill-row-title">principles</span>
+              <div class="skill-row-pills">
+                <span class="tag-pill">AI &amp; Workflow Automation</span>
+                <span class="tag-pill">Full-Stack Architecture (Frontend &amp; Backend)</span>
+                <span class="tag-pill">User-Centered UI/UX Design</span>
+                <span class="tag-pill">Defensive Cybersecurity &amp; Secure-by-Design</span>
+                <span class="tag-pill">System Resilience &amp; Reliability</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="hairline-rule"></div>
+
+        <!-- ==================================================================
+             SECTION 04: EXPERIENCE
+             Hairline timeline rows
+             ================================================================== -->
+        <section class="content-section observe-entrance stagger-4" id="experience">
+          <div class="section-marker">04 — experience</div>
+
+          <h2 style="font-size: 1.4rem; margin-bottom: 1.5rem;">journey &amp; milestones</h2>
+
+          <div class="timeline-list">
+            <!-- Event 1: AppBuilders PH Hackathon -->
+            <div class="timeline-row">
+              <span class="timeline-period">oct 2026</span>
+              <div class="timeline-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.35rem;">
+                  <h4 style="margin-bottom: 0;">AppBuilders PH Hackathon</h4>
+                  <button class="cert-badge-btn" data-modal-open="certModalAppBuilders">
+                    view certificate <span class="arrow-nudge">↗</span>
+                  </button>
+                </div>
+                <p>Participated in intensive rapid prototyping, collaborative product engineering, and developing full-stack solutions under competitive hackathon timelines.</p>
+              </div>
+            </div>
+
+            <!-- Event 2: Room for Future Experience -->
+            <div class="timeline-row">
+              <span class="timeline-period">upcoming</span>
+              <div class="timeline-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.35rem;">
+                  <h4 style="margin-bottom: 0; color: var(--text-secondary);">Hackathon &amp; Engineering Sprint</h4>
+                  <span class="tag-pill" style="opacity: 0.7;">slot 02 / ready</span>
+                </div>
+                <p style="color: var(--gray-400);">Reserved for upcoming technical sprints, hackathons, and software engineering competitions.</p>
+              </div>
+            </div>
+
+            <!-- Event 3: Room for Future Experience -->
+            <div class="timeline-row">
+              <span class="timeline-period">upcoming</span>
+              <div class="timeline-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.35rem;">
+                  <h4 style="margin-bottom: 0; color: var(--text-secondary);">Cybersecurity &amp; Cloud Certification</h4>
+                  <span class="tag-pill" style="opacity: 0.7;">slot 03 / ready</span>
+                </div>
+                <p style="color: var(--gray-400);">Space allocated for forthcoming industry certifications, security evaluations, and credentials.</p>
+              </div>
+            </div>
+
+            <!-- Event 4: Room for Future Experience -->
+            <div class="timeline-row">
+              <span class="timeline-period">upcoming</span>
+              <div class="timeline-details">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.35rem;">
+                  <h4 style="margin-bottom: 0; color: var(--text-secondary);">Open Milestone Slot</h4>
+                  <span class="tag-pill" style="opacity: 0.7;">slot 04 / ready</span>
+                </div>
+                <p style="color: var(--gray-400);">Reserved for future professional contributions, client systems, and open-source software deployments.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="hairline-rule"></div>
+
+        <!-- ==================================================================
+             SECTION 05: CONTACT
+             Minimal inputs (gray-50 fill, gray-200 border, 6px radius, mono text)
+             ================================================================== -->
+        <section class="content-section observe-entrance stagger-5" id="contact">
+          <div class="section-marker">05 — contact</div>
+
+          <h2 style="font-size: 1.4rem; margin-bottom: 0.75rem;">get in touch</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 1.75rem;">
+            Whether you have an inquiry, potential collaboration, or simply want to connect, feel free to reach out directly or send a message.
+          </p>
+
+          <!-- Contact Channels Matrix -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 0.75rem; margin-bottom: 2rem;">
+            <a href="mailto:atsusariaeron05@gmail.com" class="card card-faint plain-link" style="padding: 1rem;">
+              <span class="micro-label">email</span>
+              <p style="font-size: 0.85rem; color: var(--ink); margin-top: 0.35rem; word-break: break-all;">atsusariaeron05@gmail.com <span class="arrow-nudge">↗</span></p>
+            </a>
+            <a href="tel:09602647379" class="card card-faint plain-link" style="padding: 1rem;">
+              <span class="micro-label">phone / mobile</span>
+              <p style="font-size: 0.85rem; color: var(--ink); margin-top: 0.35rem;">0960 264 7379 <span class="arrow-nudge">↗</span></p>
+            </a>
+            <a href="https://github.com/aeronautic005" target="_blank" rel="noopener" class="card card-faint plain-link" style="padding: 1rem;">
+              <span class="micro-label">github</span>
+              <p style="font-size: 0.85rem; color: var(--ink); margin-top: 0.35rem;">github.com/aeronautic005 <span class="arrow-nudge">↗</span></p>
+            </a>
+            <a href="https://www.linkedin.com/in/irasustaaeron/" target="_blank" rel="noopener" class="card card-faint plain-link" style="padding: 1rem;">
+              <span class="micro-label">linkedin</span>
+              <p style="font-size: 0.85rem; color: var(--ink); margin-top: 0.35rem;">linkedin.com/in/irasustaaeron <span class="arrow-nudge">↗</span></p>
+            </a>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">name</label>
+              <input type="text" id="name" name="name" class="form-input-minimal" placeholder="your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">email</label>
+              <input type="email" id="email" name="email" class="form-input-minimal" placeholder="your.email@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">message</label>
+              <textarea id="message" name="message" class="form-input-minimal" placeholder="write your message here..." required></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="btn-ink">
+                send message <span class="arrow-right-nudge">→</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ==================================================================
+             FOOTER
+             Hairline border, micro-labels
+             ================================================================== -->
+        <footer class="site-footer">
+          <span class="micro-label">
+            &copy; 2026 aeron irasusta &middot; all rights reserved
+          </span>
+
+          <div class="footer-links">
+            <a href="https://github.com/aeronautic005" target="_blank" rel="noopener" class="micro-label plain-link">
+              github <span class="arrow-nudge">↗</span>
+            </a>
+            <a href="https://www.linkedin.com/in/irasustaaeron/" target="_blank" rel="noopener" class="micro-label plain-link">
+              linkedin <span class="arrow-nudge">↗</span>
+            </a>
+            <a href="mailto:atsusariaeron05@gmail.com" class="micro-label plain-link">
+              email <span class="arrow-nudge">↗</span>
+            </a>
+            <a href="tel:09602647379" class="micro-label plain-link">
+              tel <span class="arrow-nudge">↗</span>
+            </a>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ======================================================================
+       MODAL: AppBuilders PH Hackathon Certificate View
+       ====================================================================== -->
+  <div class="modal-overlay" id="certModalAppBuilders" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <span class="micro-label" id="certModalTitle">event credential / 2026</span>
+        <button class="modal-close-btn" data-modal-close aria-label="Close modal">close ✕</button>
+      </div>
+
+      <div class="cert-preview-box">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem;">
+          <div>
+            <span class="micro-label" style="color: var(--gray-400);">hackathon credential</span>
+            <h4 style="font-size: 1rem; color: var(--ink); margin-top: 0.2rem;">AppBuilders PH Hackathon</h4>
+          </div>
+          <span class="chip-inverted" style="font-size: 8px;">verified</span>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55; margin-top: 0.25rem;">
+          Official certificate of technical participation and engineering contribution at the AppBuilders PH Hackathon, held in October 2026.
+        </p>
+
+        <div style="border-top: 1px solid var(--border-hairline); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 10px; color: var(--gray-400);">
+          <span>issued: oct 2026</span>
+          <span style="color: var(--ink);">philippines</span>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+        <button class="btn-ink" data-modal-close style="padding: 0.45rem 0.9rem; font-size: 11px;">done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

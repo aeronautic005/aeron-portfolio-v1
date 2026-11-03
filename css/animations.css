@@ -1,0 +1,102 @@
+/* ==========================================================================
+   BRYL-MINIMAL DESIGN LANGUAGE — Motion & Keyframes
+   Restrained, brief, one-directional motion (settles downward-up, no bounce)
+   ========================================================================== */
+
+/* Entrance Animation: Fades up from 12px below over 700ms */
+@keyframes entranceFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger classes applied to sections and cards */
+.animate-entrance {
+  animation: entranceFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 120ms; }
+.stagger-3 { animation-delay: 190ms; }
+.stagger-4 { animation-delay: 260ms; }
+.stagger-5 { animation-delay: 330ms; }
+
+/* Status dot pulse: opacity (1 -> 0.25 -> 1) on a slow 1.8s loop */
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.status-pulse {
+  animation: statusPulse 1.8s ease-in-out infinite;
+}
+
+/* Modal entrance */
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-enter {
+  animation: modalIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Arrow nudge on hover */
+.arrow-nudge {
+  display: inline-block;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover .arrow-nudge {
+  transform: translate(2px, -2px);
+}
+
+.arrow-right-nudge {
+  display: inline-block;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover .arrow-right-nudge {
+  transform: translateX(3px);
+}
+
+/* Card hover image zoom */
+.card-zoom-img {
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .card-zoom-img {
+  transform: scale(1.04);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  
+  .animate-entrance {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
