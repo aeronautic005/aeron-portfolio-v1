@@ -32,10 +32,10 @@
 - **Bio**:
   > "Software engineer specializing in AI automation, full-stack web development, intuitive UI/UX design, and defensive cybersecurity. Dedicated to building reliable, resilient systems where purposeful engineering and clarity come first."
 - **Attribute Chips**:
-  - `Institution`: BatStateU - The NEU
+  - `Base`: Philippines
   - `Focus`: AI Automation & Web Dev
   - `Domains`: UI/UX & Cybersecurity
-  - `Base`: Philippines
+  - `Status`: Available for Work
 - **CTAs**:
   - Primary: `Get in Touch →` (links to `#contact`)
   - Secondary: `View Selected Work ↗` (links to `#projects`)
