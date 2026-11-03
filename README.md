@@ -6,7 +6,7 @@
 
 ---
 
-## ⚡ Overview
+## Overview
 
 A lightweight, high-performance personal portfolio built with pure semantic HTML5, modern CSS3 custom properties, and vanilla JavaScript. Designed with a minimal, typography-driven aesthetic featuring:
 
@@ -18,7 +18,7 @@ A lightweight, high-performance personal portfolio built with pure semantic HTML
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Markup**: Semantic HTML5 (ARIA landmarks, accessible forms, modal dialogs)
 - **Styling**: Modern CSS3 (Custom properties/tokens, CSS Grid, Flexbox, Halftone SVG masks)
@@ -28,7 +28,7 @@ A lightweight, high-performance personal portfolio built with pure semantic HTML
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 .
@@ -51,7 +51,7 @@ A lightweight, high-performance personal portfolio built with pure semantic HTML
 
 ---
 
-## 🚀 Running Locally
+## Running Locally
 
 No installation or server setup is required:
 
@@ -67,7 +67,7 @@ No installation or server setup is required:
 
 ---
 
-## 📬 Contact & Connect
+## Contact & Connect
 
 - **Email**: [atsusariaeron05@gmail.com](mailto:atsusariaeron05@gmail.com)
 - **Phone**: [0960 264 7379](tel:09602647379)
@@ -75,5 +75,3 @@ No installation or server setup is required:
 - **LinkedIn**: [Aeron Kiel Irasusta](https://www.linkedin.com/in/irasustaaeron/)
 
 ---
-
-© 2026 Aeron Irasusta. All rights reserved.
